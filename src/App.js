@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { async } from 'q';
+import React, { Component, Fragment } from 'react';
+import Header from './components/Header';
 
 class App extends Component{
   state = {}
 
-  // Se recomienda llamar una API cuando el documento está listo
+  // carga la API cuando el documento es listo
   componentDidMount(){
     this.consultarNoticias();
   }
@@ -21,7 +21,17 @@ class App extends Component{
   }
 
   render(){
-    return(<h1>Noticias API React</h1>);
+    return(
+      <Fragment>
+        <Header 
+          titulo='Noticias React API'
+        />
+
+        <div className="container white contenedor-noticias">
+
+        </div>
+      </Fragment>
+    );
   }
 }
 
