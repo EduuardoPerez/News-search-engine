@@ -1,8 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import Header from './components/Header';
+import ListaNoticias from './components/ListaNoticias';
 
 class App extends Component{
-  state = {}
+  state = {
+    noticias: []
+  }
 
   // carga la API cuando el documento es listo
   componentDidMount(){
@@ -28,7 +31,9 @@ class App extends Component{
         />
 
         <div className="container white contenedor-noticias">
-
+          <ListaNoticias 
+            noticias={this.state.noticias}
+          />
         </div>
       </Fragment>
     );
