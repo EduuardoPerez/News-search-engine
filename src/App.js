@@ -13,8 +13,13 @@ class App extends Component{
     this.consultarNoticias();
   }
 
-  consultarNoticias = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=ar&apiKey=64894da34df448a5af3268a7a15778ea`;
+  /*
+    Este método se creo aparte porque pasara por prop desde Formulario
+    y no es recomendable utilizar los metodos de ciclo de vida para 
+    ser pasados por prop
+  */
+  consultarNoticias = async (categoria = 'general') => {
+    const url = `https://newsapi.org/v2/top-headlines?country=ar&category=${categoria}&apiKey=64894da34df448a5af3268a7a15778ea`;
 
     const respuesta = await fetch(url);
     const noticias = await respuesta.json();
@@ -33,7 +38,7 @@ class App extends Component{
 
         <div className="container white contenedor-noticias">
           <Formulario 
-          
+            consultarNoticias={this.consultarNoticias}
           />
           <ListaNoticias 
             noticias={this.state.noticias}
