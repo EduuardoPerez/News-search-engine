@@ -13,14 +13,7 @@ class App extends Component{
     this.consultarNoticias();
   }
 
-  /*
-    Este método se creo aparte porque pasara por prop desde Formulario
-    y no es recomendable utilizar los metodos de ciclo de vida para 
-    ser pasados por prop
-
-    Este trozo de codigo es el que se utilizará de manera general cuando
-    se utilice class component y se quiera consumir una API
-  */
+  // Consulta la API
   consultarNoticias = async (categoria = 'general') => {
     const url = `https://newsapi.org/v2/top-headlines?country=ar&category=${categoria}&apiKey=64894da34df448a5af3268a7a15778ea`;
 

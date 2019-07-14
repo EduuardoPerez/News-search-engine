@@ -15,21 +15,6 @@ class Formulario extends Component {
 
   // Actualiza el state
   cambiarCategoria = e => {
-    /*
-      this.setState({
-        categoria: e.target.value
-      })
-
-      // Pasarlo a la página principal para que haga la consulta
-      this.props.consultarNoticias(this.state.categoria);
-
-      De esta forma se actualizaría luego de que cambie de nuevo de
-      categoría y estaría mostrándose entonces la categoría seleccionada
-      anteriormente.
-
-      Para solucionar esto setState recibe como segundo parametro
-      un callback
-    */
     this.setState({
       categoria: e.target.value
     }, () => {
